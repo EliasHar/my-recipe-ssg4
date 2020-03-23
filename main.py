@@ -52,4 +52,3 @@ for post in POSTS:
     os.makedirs(os.path.dirname(post_file_path), exist_ok=True)
     with open(post_file_path, 'w') as file:
         file.write(post_html)
-

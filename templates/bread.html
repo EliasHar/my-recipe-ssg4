@@ -1,7 +1,8 @@
+
 {% extends "mainpage.html" %}
 <h1>My Recipes</h1>
 {% block content %}
-<div class="col-3">
+<main class="col-3">
 {% for post in posts %}
     <div class="stretch">
         <article class="card">
@@ -12,26 +13,16 @@
                 <h2>{{ post.title }}</h2>
                 <small>{{ post.date }}</small>
                 <p>{{ post.summary}}</p>
+                
                 <a class="mybutt" href="posts/{{ post.slug }}.html">Recipe</a>
-                <br>
+                
                 {% set list_of_tags = post.tags.split(",") %}
                 {% for tag in list_of_tags %}
-                    <button class="shyButton mybutton">{{ tag }}</button>
+                    <button class="mytag">{{ tag }}</button>
                 {% endfor %}
             </main>
-            
         </article>
-
     </div>
-
-<!-- 
-    <p>
-            <h2>{{loop.index}}: <a href="posts/{{ post.slug }}.html">{{post.title}}</a> <small>{{post.date}}</small></h2>
-            {{post.summary}}
-        </p> -->
-
 {% endfor %}
-
-</div>
-
+</main>
 {% endblock %}
